@@ -18,6 +18,8 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var genderView: UIView!
     
+    var genderChoice : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,15 +51,15 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func malePressed(_ sender: Any) {
-        print("male pressed")
         maleButton.isSelected = true
         femaleButton.isSelected = false
+        genderChoice = "Male"
     }
     
     @IBAction func femalePressed(_ sender: Any) {
-        print("female pressed")
         femaleButton.isSelected = true
         maleButton.isSelected = false
+        genderChoice = "Female"
     }
     
     @IBAction func submitPressed(_ sender: Any) {
@@ -73,6 +75,7 @@ class FormViewController: UIViewController, UITextFieldDelegate {
                 userDefaultStore.set(nameTextField.text, forKey: "name") //store textView value in userDefault
                 userDefaultStore.set(surnameTextField.text, forKey: "surname")
                 userDefaultStore.set(emailTextField.text, forKey: "email")
+                userDefaultStore.set(genderChoice, forKey: "gender")
                 let storyboard = UIStoryboard(name: "Cards", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "CardsViewController") as UIViewController
                 self.navigationController?.pushViewController(vc, animated: true)

@@ -12,6 +12,7 @@ class CardsViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class CardsViewController: UIViewController {
         nameLabel.text = userDefault.string(forKey: "name")
         surnameLabel.text = userDefault.string(forKey: "surname")
         emailLabel.text = userDefault.string(forKey: "email")
+        genderLabel.text = userDefault.string(forKey: "gender")
 
         
     }
