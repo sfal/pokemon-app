@@ -15,12 +15,20 @@ extension UIButton {
         self.layer.cornerRadius = self.layer.frame.size.height / 2
         self.layer.masksToBounds = true
         
-        if isSelected {
-            self.layer.backgroundColor = UIColor.init(named: "MainColor")?.cgColor
-        } else {
-            self.layer.backgroundColor = UIColor.init(named: "BackgroundColor")?.cgColor
-            self.setTitleColor(UIColor.init(named: "TextColor"), for: .normal)
-        }
+        let image = UIColor.init(named: "MainColor")?.image(CGSize(width: 128, height: 128))
         
+        self.setTitleColor(UIColor.init(named: "AlternativeTextColor"), for: .selected)
+        self.tintColor = .clear
+        self.setBackgroundImage(image, for: .selected)
+
+    }
+}
+
+extension UIColor {
+    func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+            self.setFill()
+            rendererContext.fill(CGRect(origin: .zero, size: size))
+        }
     }
 }

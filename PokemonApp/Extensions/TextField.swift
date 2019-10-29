@@ -16,5 +16,26 @@ extension UITextField {
         self.layer.cornerRadius = self.layer.frame.size.height / 2
         self.layer.masksToBounds = true
         self.layer.borderColor = UIColor.black.cgColor
+        
     }
+    
+    func setLeftPadding(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    
+    func setRightPadding(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+    
+    var isEmpty: Bool {
+        if let text = self.text, !text.isEmpty {
+             return false
+        }
+        return true
+    }
+  
 }

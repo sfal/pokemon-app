@@ -10,21 +10,22 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefault = UserDefaults.standard //create UserDefault object
+        
+        nameLabel.text = userDefault.string(forKey: "name")
+        surnameLabel.text = userDefault.string(forKey: "surname")
+        emailLabel.text = userDefault.string(forKey: "email")
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
