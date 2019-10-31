@@ -38,6 +38,7 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         emailTextField.setRightPadding(20)
         
         emailTextField.delegate = self
+        maleButton.isSelected = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
@@ -65,26 +66,39 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBAction func submitPressed(_ sender: Any) {
         let isEmailValid = validateEmail(enteredEmail: emailTextField.text ?? "")
         
-        if nameTextField.isEmpty || surnameTextField.isEmpty || emailTextField.isEmpty {
-            let alert = UIAlertController(title: "WARNING", message: "Please fill all the fields", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true)
-        } else {
-            if isEmailValid {
-                let userDefaultStore = UserDefaults.standard //userDefault object
-                userDefaultStore.set(nameTextField.text, forKey: "name") //store textView value in userDefault
-                userDefaultStore.set(surnameTextField.text, forKey: "surname")
-                userDefaultStore.set(emailTextField.text, forKey: "email")
-                userDefaultStore.set(genderChoice, forKey: "gender")
-                let storyboard = UIStoryboard(name: "Cards", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "CardsViewController") as UIViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                let emailAlert = UIAlertController(title: "WARNING", message: "Please insert a valid email address", preferredStyle: .alert)
-                emailAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(emailAlert, animated: true)
-            }
-        }
+        // COMMENTED FOR TESTING PURPOSES
+        
+//        if nameTextField.isEmpty || surnameTextField.isEmpty || emailTextField.isEmpty {
+//            let alert = UIAlertController(title: "WARNING", message: "Please fill all the fields", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            self.present(alert, animated: true)
+//        } else {
+//            if isEmailValid {
+//                let userDefaultStore = UserDefaults.standard //userDefault object
+//                userDefaultStore.set(nameTextField.text, forKey: "name") //store textView value in userDefault
+//                userDefaultStore.set(surnameTextField.text, forKey: "surname")
+//                userDefaultStore.set(emailTextField.text, forKey: "email")
+//                userDefaultStore.set(genderChoice, forKey: "gender")
+//                let storyboard = UIStoryboard(name: "Cards", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "CardsViewController") as UIViewController
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            } else {
+//                let emailAlert = UIAlertController(title: "WARNING", message: "Please insert a valid email address", preferredStyle: .alert)
+//                emailAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//                self.present(emailAlert, animated: true)
+//            }
+//        }
+        
+        // COMMENT THE FOLLOWING LINES WHEN TESTING IS DONE
+        
+        let userDefaultStore = UserDefaults.standard //userDefault object
+        userDefaultStore.set(nameTextField.text, forKey: "name") //store textView value in userDefault
+        userDefaultStore.set(surnameTextField.text, forKey: "surname")
+        userDefaultStore.set(emailTextField.text, forKey: "email")
+        userDefaultStore.set(genderChoice, forKey: "gender")
+        let storyboard = UIStoryboard(name: "Cards", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CardsViewController") as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //hide keyboard if empty screen is pressed

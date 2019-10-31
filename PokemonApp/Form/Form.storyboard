@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="FormViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iyV-v2-29K" customClass="FormViewController" customModule="PokemonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HhI-GP-1je">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGc-89-RDJ">
-                                <rect key="frame" x="127.5" y="746" width="159" height="58"/>
+                                <rect key="frame" x="127.5" y="658" width="159" height="58"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="159" id="2jG-xM-Xkr"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="T3K-5u-SgK">
-                                <rect key="frame" x="47" y="147" width="320" height="551"/>
+                                <rect key="frame" x="47" y="59" width="320" height="551"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH5-qP-QiQ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
@@ -83,10 +83,10 @@
                                         <rect key="frame" x="0.0" y="336.5" width="320" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8y-VY-Ati">
-                                                <rect key="frame" x="26" y="14" width="132" height="41"/>
+                                                <rect key="frame" x="8" y="8" width="132" height="52"/>
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="6NQ-VI-Jyc"/>
+                                                    <constraint firstAttribute="height" constant="52" id="6NQ-VI-Jyc"/>
                                                     <constraint firstAttribute="width" constant="132" id="x3F-hQ-Kgv"/>
                                                 </constraints>
                                                 <state key="normal" title="Male">
@@ -97,10 +97,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDo-LQ-xRN">
-                                                <rect key="frame" x="162" y="14" width="132" height="41"/>
+                                                <rect key="frame" x="180" y="8" width="132" height="52"/>
                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="41" id="SyA-sV-dEI"/>
+                                                    <constraint firstAttribute="height" constant="52" id="SyA-sV-dEI"/>
                                                     <constraint firstAttribute="width" constant="132" id="haY-WS-shC"/>
                                                 </constraints>
                                                 <state key="normal" title="Female">
@@ -113,11 +113,11 @@
                                         </subviews>
                                         <color key="backgroundColor" name="BackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="m8y-VY-Ati" firstAttribute="top" secondItem="MUY-uZ-otL" secondAttribute="top" constant="14" id="ISM-fY-S5P"/>
-                                            <constraint firstItem="WDo-LQ-xRN" firstAttribute="top" secondItem="MUY-uZ-otL" secondAttribute="top" constant="14" id="OBO-V1-ePO"/>
-                                            <constraint firstAttribute="trailing" secondItem="WDo-LQ-xRN" secondAttribute="trailing" constant="26" id="RYg-En-V0P"/>
+                                            <constraint firstItem="m8y-VY-Ati" firstAttribute="top" secondItem="MUY-uZ-otL" secondAttribute="top" constant="8" id="ISM-fY-S5P"/>
+                                            <constraint firstItem="WDo-LQ-xRN" firstAttribute="top" secondItem="MUY-uZ-otL" secondAttribute="top" constant="8" id="OBO-V1-ePO"/>
+                                            <constraint firstAttribute="trailing" secondItem="WDo-LQ-xRN" secondAttribute="trailing" constant="8" id="RYg-En-V0P"/>
                                             <constraint firstAttribute="height" constant="70" id="SqE-9a-3G6"/>
-                                            <constraint firstItem="m8y-VY-Ati" firstAttribute="leading" secondItem="MUY-uZ-otL" secondAttribute="leading" constant="26" id="y4H-bc-fKG"/>
+                                            <constraint firstItem="m8y-VY-Ati" firstAttribute="leading" secondItem="MUY-uZ-otL" secondAttribute="leading" constant="8" id="y4H-bc-fKG"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2Z-BR-YZr">
@@ -175,7 +175,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q3H-Dd-mBV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dac-5O-vCA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dac-5O-vCA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
