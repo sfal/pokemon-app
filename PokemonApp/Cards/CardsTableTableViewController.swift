@@ -10,12 +10,25 @@ import UIKit
 
 class CardsTableTableViewController: UITableViewController {
     
+    var myPokeName = ""
+    var myFirstType = ""
+    var mySecondType = ""
+    var myPokeSprite = ""
+    
     let cardsColors = [UIColor.init(named: "MainColor"), UIColor.init(named: "CardColor"), UIColor.init(named: "CardColorAlternative")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.init(named: "BackgroundColor")
+        
+        getDetails(url: "") { (randomPokemon) in
+            self.myPokeName = randomPokemon.name
+            self.myFirstType = randomPokemon.type1
+            self.mySecondType = randomPokemon.type2
+            self.myPokeSprite = randomPokemon.sprite
+            print("HERE'S YOUR POKEMON: \n NAME: \(self.myPokeName) \n TYPE-1: \(self.myFirstType) \n TYPE-2: \(self.mySecondType) \n SPRITE: \(self.myPokeSprite)")
+        }
         
     }
 
@@ -53,6 +66,10 @@ class CardsTableTableViewController: UITableViewController {
         // add corner radius on contentView
         cell.contentView.backgroundColor = self.cardsColors[indexPath.section % self.cardsColors.count]
         cell.contentView.layer.cornerRadius = 25
+        
+        let myarray = ["tizio", "caio", "sempronio"]
+        
+        cell.pokemonName.text = myarray[indexPath.section]
         
   
         

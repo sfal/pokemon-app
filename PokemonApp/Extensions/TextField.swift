@@ -15,7 +15,7 @@ extension UITextField {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = self.layer.frame.size.height / 2
         self.layer.masksToBounds = true
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.init(named: "BorderColor")?.cgColor
         
     }
     

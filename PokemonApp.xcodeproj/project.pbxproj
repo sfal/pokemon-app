@@ -19,6 +19,10 @@
 		761B1B232366E44300A9983D /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761B1B222366E44300A9983D /* Cards.storyboard */; };
 		761B1B252366E44E00A9983D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761B1B242366E44E00A9983D /* ResultViewController.swift */; };
 		761B1B272366E45500A9983D /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761B1B262366E45500A9983D /* Result.storyboard */; };
+		762D1544236AE3A800D14F07 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762D1543236AE3A800D14F07 /* TestViewController.swift */; };
+		762D1546236AE3BB00D14F07 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762D1545236AE3BB00D14F07 /* Test.storyboard */; };
+		7673B9E92371E0D800C86FCE /* PokeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B9E82371E0D800C86FCE /* PokeStruct.swift */; };
+		7673B9ED2371E1D100C86FCE /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7673B9EC2371E1D100C86FCE /* API.swift */; };
 		76C52D7C2369F9CA00E370BD /* CardsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C52D7B2369F9CA00E370BD /* CardsTableTableViewController.swift */; };
 		76EC57422366EBE9000E17C6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC57412366EBE9000E17C6 /* TextField.swift */; };
 		76EC57452366F2CA000E17C6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC57442366F2CA000E17C6 /* View.swift */; };
@@ -61,6 +65,10 @@
 		761B1B222366E44300A9983D /* Cards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
 		761B1B242366E44E00A9983D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		761B1B262366E45500A9983D /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		762D1543236AE3A800D14F07 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		762D1545236AE3BB00D14F07 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		7673B9E82371E0D800C86FCE /* PokeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeStruct.swift; sourceTree = "<group>"; };
+		7673B9EC2371E1D100C86FCE /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		76C52D7B2369F9CA00E370BD /* CardsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsTableTableViewController.swift; sourceTree = "<group>"; };
 		76EC57412366EBE9000E17C6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		76EC57442366F2CA000E17C6 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 		761B1AE82366E31200A9983D /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
+				762D1542236AE38B00D14F07 /* API Test */,
 				76EC57402366EBD8000E17C6 /* Extensions */,
 				761B1B192366E3ED00A9983D /* Form */,
 				761B1B1A2366E3F600A9983D /* Cards */,
@@ -161,6 +170,8 @@
 				761B1B202366E43D00A9983D /* CardsViewController.swift */,
 				761B1B222366E44300A9983D /* Cards.storyboard */,
 				76C52D7B2369F9CA00E370BD /* CardsTableTableViewController.swift */,
+				7673B9E82371E0D800C86FCE /* PokeStruct.swift */,
+				7673B9EC2371E1D100C86FCE /* API.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -172,6 +183,15 @@
 				761B1B262366E45500A9983D /* Result.storyboard */,
 			);
 			path = Result;
+			sourceTree = "<group>";
+		};
+		762D1542236AE38B00D14F07 /* API Test */ = {
+			isa = PBXGroup;
+			children = (
+				762D1543236AE3A800D14F07 /* TestViewController.swift */,
+				762D1545236AE3BB00D14F07 /* Test.storyboard */,
+			);
+			path = "API Test";
 			sourceTree = "<group>";
 		};
 		76EC57402366EBD8000E17C6 /* Extensions */ = {
@@ -288,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762D1546236AE3BB00D14F07 /* Test.storyboard in Resources */,
 				761B1B272366E45500A9983D /* Result.storyboard in Resources */,
 				761B1B232366E44300A9983D /* Cards.storyboard in Resources */,
 				761B1AF62366E31300A9983D /* LaunchScreen.storyboard in Resources */,
@@ -317,11 +338,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762D1544236AE3A800D14F07 /* TestViewController.swift in Sources */,
 				761B1B252366E44E00A9983D /* ResultViewController.swift in Sources */,
 				761B1B212366E43D00A9983D /* CardsViewController.swift in Sources */,
+				7673B9E92371E0D800C86FCE /* PokeStruct.swift in Sources */,
 				76C52D7C2369F9CA00E370BD /* CardsTableTableViewController.swift in Sources */,
 				761B1B1D2366E42900A9983D /* FormViewController.swift in Sources */,
 				76EC57472366F3CD000E17C6 /* Button.swift in Sources */,
+				7673B9ED2371E1D100C86FCE /* API.swift in Sources */,
 				76EC57422366EBE9000E17C6 /* TextField.swift in Sources */,
 				761B1AEA2366E31200A9983D /* AppDelegate.swift in Sources */,
 				76EC57452366F2CA000E17C6 /* View.swift in Sources */,

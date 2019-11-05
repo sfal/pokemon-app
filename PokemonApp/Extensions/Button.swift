@@ -17,7 +17,8 @@ extension UIButton {
         
         let image = UIColor.init(named: "MainColor")?.image(CGSize(width: 128, height: 128))
         
-        self.setTitleColor(UIColor.init(named: "AlternativeTextColor"), for: .selected)
+        self.setTitleColor(UIColor.init(named: "TextColor"), for: .normal)
+        self.setTitleColor(UIColor.init(named: "TextColorAlternative"), for: .selected)
         self.tintColor = .clear
         self.setBackgroundImage(image, for: .selected)
 

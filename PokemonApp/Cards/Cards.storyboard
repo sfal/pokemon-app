@@ -25,10 +25,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ1-L0-GGd">
-                                            <rect key="frame" x="20" y="25" width="57" height="29"/>
+                                            <rect key="frame" x="20" y="25" width="334" height="29"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="GzS-MO-Spe"/>
-                                                <constraint firstAttribute="width" secondItem="ZZ1-L0-GGd" secondAttribute="height" multiplier="57:29" id="sa4-1u-FDX"/>
+                                                <constraint firstAttribute="width" secondItem="ZZ1-L0-GGd" secondAttribute="height" multiplier="57:29" constant="277" id="sa4-1u-FDX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
