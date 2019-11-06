@@ -122,13 +122,20 @@ class CardsTableTableViewController: UITableViewController {
         // add corner radius on contentView
         cell.contentView.backgroundColor = self.cardsColors[indexPath.section % self.cardsColors.count]
         cell.contentView.layer.cornerRadius = 25
-        
-
-    
+   
         cell.pokemonName.text = namesArray[indexPath.section]
         cell.pokemonType1.text = type1Array[indexPath.section]
         cell.pokemonType2.text = type2Array[indexPath.section]
 //        cell.pokemonSprite.image = UIImage(named: spritesArray[0])
+        
+        cell.pokemonName.textColor = UIColor.init(named: "TextColorAlternative")
+        cell.pokemonName.text = cell.pokemonName.text?.uppercased()
+        
+        cell.pokemonType1.textColor = UIColor.init(named: "TextColorAlternative")
+        cell.pokemonType1.text = cell.pokemonType1.text?.uppercased()
+        
+        cell.pokemonType2.textColor = UIColor.init(named: "TextColorAlternative")
+        cell.pokemonType2.text = cell.pokemonType2.text?.uppercased()
         
 
         
