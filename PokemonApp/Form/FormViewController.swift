@@ -23,6 +23,15 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setStyles()
+        
+        emailTextField.delegate = self
+        maleButton.isSelected = true
+                
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+    }
+    
+    func setStyles() {
         nameTextField.formatTextField()
         surnameTextField.formatTextField()
         emailTextField.formatTextField()
@@ -36,11 +45,6 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         surnameTextField.setRightPadding(20)
         emailTextField.setLeftPadding(20)
         emailTextField.setRightPadding(20)
-        
-        emailTextField.delegate = self
-        maleButton.isSelected = true
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

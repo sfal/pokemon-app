@@ -11,30 +11,24 @@ import UIKit
 class CardsTableTableViewController: UITableViewController {
     
     let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
-    
     var pickedPokemons : [PickedPokemon] = []
     var namesArray = [String]()
     var type1Array = [String]()
     var type2Array = [String]()
-    var spritesArray = [String]()
-    
+    var spritesArray = [NSURL]()
     let cardsColors = [UIColor.init(named: "MainColor"), UIColor.init(named: "CardColor"), UIColor.init(named: "CardColorAlternative")]
+    let typeColors = [UIColor.init(named: "CardColor"), UIColor.init(named: "MainColor"), UIColor.init(named: "AccentColor")]
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupLoadingWheel()
-        
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.init(named: "BackgroundColor")
-        
         getData()
         
-  
+        
+        
     }
     
     func getData() {
@@ -44,15 +38,10 @@ class CardsTableTableViewController: UITableViewController {
         for _ in 3 {
             activityIndicator.startAnimating()
             myGroup.enter()
-            
             getRandomPokemon(url: "") { (randomPokemon) in
-                
                 self.pickedPokemons.append(PickedPokemon(name: randomPokemon.name, type1: randomPokemon.type1, type2: randomPokemon.type2, sprite: randomPokemon.sprite))
-                
                 myGroup.leave()
-                
             }
-            
         }
         myGroup.notify(queue: .main) {
             print("Finished all requests")
@@ -61,10 +50,9 @@ class CardsTableTableViewController: UITableViewController {
 //            print("POKEMON: \(self.pickedPokemons)")
             for x in self.pickedPokemons {
                 self.namesArray.append(x.name)
-//                print(self.namesArray)
                 self.type1Array.append(x.type1)
                 self.type2Array.append(x.type2)
-                self.spritesArray.append(x.sprite)
+                self.spritesArray.append(NSURL(string: x.sprite)!)
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                   self.activityIndicator.stopAnimating()
@@ -88,7 +76,6 @@ class CardsTableTableViewController: UITableViewController {
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 3
         // returning this to make sure that the tableview only loads after data is fetched
         return namesArray.count
     }
@@ -126,7 +113,11 @@ class CardsTableTableViewController: UITableViewController {
         cell.pokemonName.text = namesArray[indexPath.section]
         cell.pokemonType1.text = type1Array[indexPath.section]
         cell.pokemonType2.text = type2Array[indexPath.section]
-//        cell.pokemonSprite.image = UIImage(named: spritesArray[0])
+
+        let imageData = try! Data(contentsOf: spritesArray[indexPath.section] as URL)
+        let image = UIImage(data: imageData)
+        
+        cell.pokemonSprite.image = image
         
         cell.pokemonName.textColor = UIColor.init(named: "TextColorAlternative")
         cell.pokemonName.text = cell.pokemonName.text?.uppercased()
@@ -137,10 +128,19 @@ class CardsTableTableViewController: UITableViewController {
         cell.pokemonType2.textColor = UIColor.init(named: "TextColorAlternative")
         cell.pokemonType2.text = cell.pokemonType2.text?.capitalized
         
+        cell.pokemonType1.formatFirstTypeLabel()
+        if cell.pokemonType2.text != "" {
+            cell.pokemonType2.formatSecondTypeLabel()
+            cell.pokemonType2.backgroundColor = self.typeColors[indexPath.section % self.typeColors.count]
+        }
+        
+        
+        
 
         
         return cell
     }
+    
 
 }
 

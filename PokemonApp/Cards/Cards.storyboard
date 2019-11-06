@@ -47,18 +47,18 @@
                                                 <constraint firstAttribute="width" constant="101" id="qEg-vQ-dzj"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kat-vp-3DR">
-                                            <rect key="frame" x="216" y="187" width="138" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-vc-ufW">
+                                            <rect key="frame" x="34" y="187" width="120" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="138" id="KNF-Pv-Xi0"/>
-                                                <constraint firstAttribute="height" constant="21" id="gi9-2m-5pX"/>
+                                                <constraint firstAttribute="height" constant="40" id="gR0-eD-Ob5"/>
+                                                <constraint firstAttribute="width" constant="120" id="gaB-ZI-Vr5"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-vc-ufW">
-                                            <rect key="frame" x="20" y="187" width="138" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kat-vp-3DR">
+                                            <rect key="frame" x="220" y="187" width="120" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -66,19 +66,20 @@
                                     </subviews>
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <constraints>
+                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="bottom" constant="22" id="57J-u6-h6r"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="bottom" secondItem="TIO-vM-NdC" secondAttribute="bottom" id="Aur-O0-0s0"/>
-                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="leading" secondItem="Tic-vc-ufW" secondAttribute="trailing" constant="58" id="JeE-EN-Yyg"/>
                                         <constraint firstItem="TIO-vM-NdC" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leading" constant="116" id="OqN-aQ-G0u"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kat-vp-3DR" secondAttribute="trailing" constant="20" id="Z4N-bv-rb4"/>
                                         <constraint firstItem="TIO-vM-NdC" firstAttribute="top" secondItem="8wZ-Pd-Sf1" secondAttribute="top" constant="64" id="ZVs-WE-aT9"/>
+                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leadingMargin" constant="14" id="acf-Bg-a5b"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="top" id="eNY-Wh-Dcj"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="centerX" secondItem="TIO-vM-NdC" secondAttribute="centerX" id="fBl-5L-kN2"/>
-                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="bottom" constant="22" id="frS-WH-puH"/>
+                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="firstBaseline" secondItem="Tic-vc-ufW" secondAttribute="firstBaseline" id="lfQ-p1-y5X"/>
                                         <constraint firstItem="ZZ1-L0-GGd" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leading" constant="20" id="mKk-a1-vnR"/>
                                         <constraint firstAttribute="trailing" secondItem="TIO-vM-NdC" secondAttribute="trailing" constant="116.00000000000011" id="mwY-7d-sKg"/>
-                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="baseline" secondItem="Kat-vp-3DR" secondAttribute="firstBaseline" id="nd2-XZ-Nl8"/>
+                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="leading" secondItem="Tic-vc-ufW" secondAttribute="trailing" constant="66" id="oqj-EF-H8f"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Kat-vp-3DR" secondAttribute="trailing" constant="14" id="u4M-tn-heh"/>
                                         <constraint firstItem="ZZ1-L0-GGd" firstAttribute="top" secondItem="8wZ-Pd-Sf1" secondAttribute="top" constant="25" id="wAn-D5-5d6"/>
-                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="leading" secondItem="ZZ1-L0-GGd" secondAttribute="leading" id="zG3-pu-PIJ"/>
+                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="baseline" secondItem="Tic-vc-ufW" secondAttribute="baseline" id="xCi-sd-JDC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

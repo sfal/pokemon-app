@@ -77,7 +77,6 @@ func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
                 default:
                     print("default")
                 }
-                print(types)
 
             }
             
