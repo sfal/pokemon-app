@@ -16,6 +16,12 @@ class CardsTableTableViewController: UITableViewController {
     var type1Array = [String]()
     var type2Array = [String]()
     var spritesArray = [NSURL]()
+    var hpArray = [String]()
+    var attackArray = [String]()
+    var defenseArray = [String]()
+    var spAttackArray = [String]()
+    var spDefenseArray = [String]()
+    var speedArray = [String]()
     let cardsColors = [UIColor.init(named: "MainColor"), UIColor.init(named: "CardColor"), UIColor.init(named: "CardColorAlternative")]
     let typeColors = [UIColor.init(named: "CardColor"), UIColor.init(named: "MainColor"), UIColor.init(named: "AccentColor")]
     
@@ -39,7 +45,8 @@ class CardsTableTableViewController: UITableViewController {
             activityIndicator.startAnimating()
             myGroup.enter()
             getRandomPokemon(url: "") { (randomPokemon) in
-                self.pickedPokemons.append(PickedPokemon(name: randomPokemon.name, type1: randomPokemon.type1, type2: randomPokemon.type2, sprite: randomPokemon.sprite))
+//                self.pickedPokemons.append(PickedPokemon(name: randomPokemon.name, type1: randomPokemon.type1, type2: randomPokemon.type2, sprite: randomPokemon.sprite))
+                self.pickedPokemons.append(PickedPokemon(name: randomPokemon.name, type1: randomPokemon.type1, type2: randomPokemon.type2, sprite: randomPokemon.sprite, stats: randomPokemon.stats))
                 myGroup.leave()
             }
         }
@@ -53,11 +60,19 @@ class CardsTableTableViewController: UITableViewController {
                 self.type1Array.append(x.type1)
                 self.type2Array.append(x.type2)
                 self.spritesArray.append(NSURL(string: x.sprite)!)
+                self.hpArray.append(x.stats["HP"]!)
+                self.attackArray.append(x.stats["Attack"]!)
+                self.defenseArray.append(x.stats["Defense"]!)
+                self.spAttackArray.append(x.stats["Special-Attack"]!)
+                self.spDefenseArray.append(x.stats["Special-Defense"]!)
+                self.speedArray.append(x.stats["Speed"]!)
+                
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                   self.activityIndicator.stopAnimating()
                   self.tableView.reloadData()
             }
+            
             
             print("data loaded")
         }
@@ -134,8 +149,11 @@ class CardsTableTableViewController: UITableViewController {
             cell.pokemonType2.backgroundColor = self.typeColors[indexPath.section % self.typeColors.count]
         }
         
-        
-        
+        cell.hpLabel.text = hpArray[indexPath.section]
+        cell.attackLabel.text = attackArray[indexPath.section]
+        cell.specialAttackLabel.text = spAttackArray[indexPath.section]
+        cell.specialDefenseLabel.text = spDefenseArray[indexPath.section]
+        cell.speedLabel.text = speedArray[indexPath.section]
 
         
         return cell
@@ -150,6 +168,13 @@ class CardsTableViewCell : UITableViewCell {
     @IBOutlet weak var pokemonSprite: UIImageView!
     @IBOutlet weak var pokemonType1: UILabel!
     @IBOutlet weak var pokemonType2: UILabel!
+    @IBOutlet weak var hpLabel: UILabel!
+    @IBOutlet weak var attackLabel: UILabel!
+    @IBOutlet weak var defenseLabel: UILabel!
+    @IBOutlet weak var specialAttackLabel: UILabel!
+    @IBOutlet weak var specialDefenseLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    
 }
 
 

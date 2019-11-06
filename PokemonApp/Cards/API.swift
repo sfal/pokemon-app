@@ -13,6 +13,9 @@ func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
         var firstType = ""
         var secondType = ""
         var pokeSprite = ""
+    
+        var pokeStats = ["HP": "", "Attack": "", "Defense": "", "Special-Attack": "", "Special-Defense": "", "Speed": ""]
+      
 
     print("starting call")
         let randomInt = Int.random(in: 0..<807)
@@ -47,18 +50,20 @@ func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
         }
         // parse the result as JSON, since that's what the API provides
         do {
+            // get pokemon
           guard let pokemon = try JSONSerialization.jsonObject(with: responseData, options: [])
             as? [String: Any] else {
               print("error trying to convert data to JSON")
               return
           }
 
-
+            // get pokemon name
           guard let pokeName = pokemon["name"] as? String else {
             print("Could not get Pokemon Name from JSON")
             return
           }
 
+            // get pokemon types
             guard let types = pokemon["types"] as? AnyObject else {
 
               print("Could not get Pokemon Type from JSON")
@@ -80,15 +85,52 @@ func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
 
             }
             
+            // get pokemon sprite
             guard let sprites = pokemon["sprites"] else {
                 print("Could not get Pokemon Sprite from JSON")
                 return
             }
             let spritesDictionary = sprites as! NSDictionary
             pokeSprite = (spritesDictionary["front_default"] as? String)!
+            
+            // get pokemon stats
+            guard let stats = pokemon["stats"] as? [NSDictionary] else {
+                print("Could not get Pokemon Stats from JSON")
+                return
+            }
 
-          let randomPokemon = Pokemon(name: pokeName, type1: firstType, type2: secondType, sprite: pokeSprite)
-          callback(randomPokemon)
+            for stat in stats as! [AnyObject] {
+                let statsInfo = stat["stat"] as? [String : String]
+                let statsName = statsInfo?["name"]
+                var statsValue = stat["base_stat"]
+                
+                // convert NSNumber to String in order to add the value to the array
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .none
+                let valueAsString = numberFormatter.string(from: statsValue as! NSNumber)
+             
+
+                switch statsName {
+                case "hp":
+                    pokeStats.updateValue(valueAsString!, forKey: "HP")
+                case "attack":
+                    pokeStats.updateValue(valueAsString!, forKey: "Attack")
+                case "defense":
+                    pokeStats.updateValue(valueAsString!, forKey: "Defense")
+                case "special-attack":
+                    pokeStats.updateValue(valueAsString!, forKey: "Special-Attack")
+                case "special-defense":
+                    pokeStats.updateValue(valueAsString!, forKey: "Special-Defense")
+                case "speed":
+                    pokeStats.updateValue(valueAsString!, forKey: "Speed")
+                default:
+                    print("default")
+                }
+
+            }
+            
+            let randomPokemon = Pokemon(name: pokeName, type1: firstType, type2: secondType, sprite: pokeSprite, stats: pokeStats)
+            callback(randomPokemon)
 
             } catch  {
           print("error trying to convert data to JSON")

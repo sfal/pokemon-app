@@ -13,6 +13,7 @@ struct Pokemon {
     var type1: String
     var type2: String
     var sprite: String
+    var stats: [String:String]
 }
 
 struct PickedPokemon {
@@ -20,4 +21,5 @@ struct PickedPokemon {
     let type1: String
     let type2: String
     let sprite: String
+    var stats: [String:String]
 }
