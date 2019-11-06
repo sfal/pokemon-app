@@ -71,12 +71,13 @@ func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
 
                 switch pokeSlot {
                 case 2:
-                    firstType = pokeTypes?["name"] ?? ""
-                case 1:
                     secondType = pokeTypes?["name"] ?? ""
+                case 1:
+                    firstType = pokeTypes?["name"] ?? ""
                 default:
                     print("default")
                 }
+                print(types)
 
             }
             

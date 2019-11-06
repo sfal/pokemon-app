@@ -132,14 +132,13 @@ class CardsTableTableViewController: UITableViewController {
         cell.pokemonName.text = cell.pokemonName.text?.uppercased()
         
         cell.pokemonType1.textColor = UIColor.init(named: "TextColorAlternative")
-        cell.pokemonType1.text = cell.pokemonType1.text?.uppercased()
+        cell.pokemonType1.text = cell.pokemonType1.text?.capitalized
         
         cell.pokemonType2.textColor = UIColor.init(named: "TextColorAlternative")
-        cell.pokemonType2.text = cell.pokemonType2.text?.uppercased()
+        cell.pokemonType2.text = cell.pokemonType2.text?.capitalized
         
 
         
-        print(spritesArray)
         return cell
     }
 

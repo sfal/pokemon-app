@@ -30,7 +30,7 @@
                                                 <constraint firstAttribute="height" constant="29" id="GzS-MO-Spe"/>
                                                 <constraint firstAttribute="width" secondItem="ZZ1-L0-GGd" secondAttribute="height" multiplier="57:29" constant="277" id="sa4-1u-FDX"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -47,43 +47,38 @@
                                                 <constraint firstAttribute="width" constant="101" id="qEg-vQ-dzj"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="LV9-rF-c5G">
-                                            <rect key="frame" x="84" y="189" width="206" height="25"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-vc-ufW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="82" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kat-vp-3DR">
-                                                    <rect key="frame" x="164" y="0.0" width="42" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="9h9-er-huM"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kat-vp-3DR">
+                                            <rect key="frame" x="216" y="187" width="138" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="LV9-rF-c5G" secondAttribute="height" multiplier="83:10" id="d7e-dj-ne0"/>
+                                                <constraint firstAttribute="width" constant="138" id="KNF-Pv-Xi0"/>
+                                                <constraint firstAttribute="height" constant="21" id="gi9-2m-5pX"/>
                                             </constraints>
-                                        </stackView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tic-vc-ufW">
+                                            <rect key="frame" x="20" y="187" width="138" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <constraints>
-                                        <constraint firstItem="LV9-rF-c5G" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="bottom" constant="24" id="2bp-eY-WcK"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="bottom" secondItem="TIO-vM-NdC" secondAttribute="bottom" id="Aur-O0-0s0"/>
-                                        <constraint firstAttribute="trailing" secondItem="LV9-rF-c5G" secondAttribute="trailing" constant="84" id="M1h-Xk-Q0p"/>
+                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="leading" secondItem="Tic-vc-ufW" secondAttribute="trailing" constant="58" id="JeE-EN-Yyg"/>
                                         <constraint firstItem="TIO-vM-NdC" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leading" constant="116" id="OqN-aQ-G0u"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kat-vp-3DR" secondAttribute="trailing" constant="20" id="Z4N-bv-rb4"/>
                                         <constraint firstItem="TIO-vM-NdC" firstAttribute="top" secondItem="8wZ-Pd-Sf1" secondAttribute="top" constant="64" id="ZVs-WE-aT9"/>
-                                        <constraint firstItem="LV9-rF-c5G" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leading" constant="84" id="ajf-gc-UIO"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="top" id="eNY-Wh-Dcj"/>
                                         <constraint firstItem="9L1-KB-dh7" firstAttribute="centerX" secondItem="TIO-vM-NdC" secondAttribute="centerX" id="fBl-5L-kN2"/>
+                                        <constraint firstItem="Kat-vp-3DR" firstAttribute="top" secondItem="TIO-vM-NdC" secondAttribute="bottom" constant="22" id="frS-WH-puH"/>
                                         <constraint firstItem="ZZ1-L0-GGd" firstAttribute="leading" secondItem="8wZ-Pd-Sf1" secondAttribute="leading" constant="20" id="mKk-a1-vnR"/>
                                         <constraint firstAttribute="trailing" secondItem="TIO-vM-NdC" secondAttribute="trailing" constant="116.00000000000011" id="mwY-7d-sKg"/>
+                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="baseline" secondItem="Kat-vp-3DR" secondAttribute="firstBaseline" id="nd2-XZ-Nl8"/>
                                         <constraint firstItem="ZZ1-L0-GGd" firstAttribute="top" secondItem="8wZ-Pd-Sf1" secondAttribute="top" constant="25" id="wAn-D5-5d6"/>
+                                        <constraint firstItem="Tic-vc-ufW" firstAttribute="leading" secondItem="ZZ1-L0-GGd" secondAttribute="leading" id="zG3-pu-PIJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
