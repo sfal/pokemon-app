@@ -8,7 +8,7 @@
 
 import Foundation
 
-func getDetails(url: String, callback: @escaping (Pokemon) -> () ) {
+func getRandomPokemon(url: String, callback: @escaping (Pokemon) -> () ) {
 
         var firstType = ""
         var secondType = ""
@@ -17,8 +17,9 @@ func getDetails(url: String, callback: @escaping (Pokemon) -> () ) {
     print("starting call")
         let randomInt = Int.random(in: 0..<807)
       // Set up the URL request
-    //  let todoEndpoint: String = "https://pokeapi.co/api/v2/pokemon/\(randomInt)"
-        let pokeAPI: String = "https://pokeapi.co/api/v2/pokemon/445"
+//        let pokeAPI: String = "https://pokeapi.co/api/v2/pokemon/445"
+        let pokeAPI: String = "https://pokeapi.co/api/v2/pokemon/\(randomInt)"
+
         print(pokeAPI)
       guard let url = URL(string: pokeAPI) else {
         print("Error: cannot create URL")
@@ -63,7 +64,6 @@ func getDetails(url: String, callback: @escaping (Pokemon) -> () ) {
               print("Could not get Pokemon Type from JSON")
               return
             }
-            print(types)
             for type in types as! [AnyObject] {
                 let pokeTypes = type["type"] as? [String : String]
                 let pokeSlot = type["slot"] as? Int
@@ -98,4 +98,3 @@ func getDetails(url: String, callback: @escaping (Pokemon) -> () ) {
 
       task.resume()
 }
-

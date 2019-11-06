@@ -23,7 +23,7 @@ class TestViewController: UIViewController {
 
         print("view loaded")
 
-        getDetails(url: "") { (randomPokemon) in
+        getRandomPokemon(url: "") { (randomPokemon) in
             self.myPokeName = randomPokemon.name
             self.myFirstType = randomPokemon.type1
             self.mySecondType = randomPokemon.type2

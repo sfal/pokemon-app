@@ -14,3 +14,10 @@ struct Pokemon {
     var type2: String
     var sprite: String
 }
+
+struct PickedPokemon {
+    let name: String
+    let type1: String
+    let type2: String
+    let sprite: String
+}
