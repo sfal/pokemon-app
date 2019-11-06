@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="TIO-vM-NdC">
-                                            <rect key="frame" x="116" y="64" width="142" height="101"/>
+                                            <rect key="frame" x="116" y="64" width="142.00000000000011" height="101.00000000000011"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100.99999999999989" id="ZVo-fX-F1A"/>
                                                 <constraint firstAttribute="width" constant="141.99999999999989" id="boF-7u-UMc"/>
@@ -137,7 +137,7 @@
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohn-cI-XcK">
                                             <rect key="frame" x="30" y="269" width="310" height="1"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" name="TextColorAlternative"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ1-L0-GGd">
                                             <rect key="frame" x="30" y="27" width="334" height="29"/>
@@ -225,7 +225,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="laa-r2-BL0"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pick your Pokemon" id="1Py-Iu-fba"/>
+                    <navigationItem key="navigationItem" title="Pick your Pokemon" id="1Py-Iu-fba">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="dnB-T4-BHb">
+                            <color key="tintColor" name="TextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9B-a5-uwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,6 +259,9 @@
         <image name="ditto" width="96" height="96"/>
         <namedColor name="AccentColor">
             <color red="0.28600001335144043" green="0.63499999046325684" blue="0.86299997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColorAlternative">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
